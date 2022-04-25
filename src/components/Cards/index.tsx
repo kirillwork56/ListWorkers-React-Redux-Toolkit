@@ -21,9 +21,12 @@ const Cards: FC<Props> = () => {
 
   return (
     <>
-      <div className="mb-3">
-        <MyDropdown />
-      </div>
+      {!isLoading && (
+        <div className="mb-3">
+          <MyDropdown />
+        </div>
+      )}
+
       {personArr?.map((person) => (
         <div className="mb-3" key={person.id}>
           <MyCard {...person} />
