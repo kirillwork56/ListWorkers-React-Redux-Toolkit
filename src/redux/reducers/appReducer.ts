@@ -6,12 +6,14 @@ export interface AppStateI {
   isLoading: boolean;
   error: string | null;
   personArr: PersonI[] | null;
+  sort: "withoutSort" | "exp";
 }
 
 const initialState: AppStateI = {
   isLoading: false,
   error: null,
   personArr: null,
+  sort: "withoutSort",
 };
 
 export const fetchWorkersAT = createAsyncThunk(
@@ -28,7 +30,16 @@ export const fetchWorkersAT = createAsyncThunk(
 export const appSlice = createSlice({
   name: "app",
   initialState,
-  reducers: {},
+  reducers: {
+    sortPersonArr: (state, action: PayloadAction<"withoutSort" | "exp">) => {
+      state.sort = action.payload;
+      if (action.payload === "exp" && state.personArr !== null) {
+        state.personArr = state.personArr
+          .sort((a, b) => a.experience - b.experience)
+          .reverse();
+      }
+    },
+  },
   extraReducers: {
     [fetchWorkersAT.pending.type]: (state) => {
       state.isLoading = true;
@@ -48,6 +59,8 @@ export const appSlice = createSlice({
     },
   },
 });
+
+export const { sortPersonArr } = appSlice.actions;
 
 const appReducer = appSlice.reducer;
 export default appReducer;
