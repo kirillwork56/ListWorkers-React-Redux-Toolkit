@@ -43,11 +43,3 @@ Start local
   # or
   npm run start
 ```
-
-Start the server
-
-```bash
-  yarn dev
-  # or
-  npm run dev
-```

@@ -14,7 +14,7 @@ const Cards: FC<Props> = () => {
 
   useEffect(() => {
     dispatch(fetchWorkersAT());
-  }, []);
+  }, [dispatch]);
 
   if (!personArr && !isLoading)
     return <ErrorMessage text={"No data"} type={"info"} />;
