@@ -19,7 +19,7 @@ To run this project, you will need to add the following environment variables to
 Clone the project
 
 ```bash
-    git clone https://github.com/kirillwork56/ListWorkers-React-Redux-Toolkit
+  git clone https://github.com/kirillwork56/ListWorkers-React-Redux-Toolkit
 ```
 
 Go to the project directory
