@@ -12,7 +12,7 @@ The application displays a list of employees, with the ability to sort
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`REACT_API`
+`REACT_APP_API_URL`
 
 ## Run Locally
 
