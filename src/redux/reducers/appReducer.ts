@@ -20,9 +20,11 @@ export const fetchWorkersAT = createAsyncThunk(
   "app/fetchWorkersAC",
   async (_, thunkAPI) => {
     try {
-      return await WorkersAPI.getWorkers();
+      const data = await WorkersAPI.getWorkers();
+      if (typeof data === "string") throw data;
+      return data;
     } catch (err) {
-      return thunkAPI.rejectWithValue((err as Error).message);
+      return thunkAPI.rejectWithValue(err);
     }
   }
 );

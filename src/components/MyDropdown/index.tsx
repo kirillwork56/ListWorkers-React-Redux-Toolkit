@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "hooks/hooks";
+import { useAppDispatch } from "hooks/hooks";
 import { FC } from "react";
 import { Dropdown } from "react-bootstrap";
 import { sortPersonArr } from "redux/reducers/appReducer";

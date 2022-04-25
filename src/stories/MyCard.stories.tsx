@@ -4,7 +4,7 @@ import MyCard from "components/MyCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
-  title: "Example/Button",
+  title: "Example/Card",
   component: MyCard,
 } as ComponentMeta<typeof MyCard>;
 
