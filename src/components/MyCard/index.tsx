@@ -14,14 +14,14 @@ const MyCard: FC<PersonI> = ({
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Subtitle className="text-muted">{jobTitle}</Card.Subtitle>
-        <Card.Text>
-          Profile:
-          <ul>
-            <li>Email: {email}</li>
-            <li>Work experience: {experience} years</li>
-            <li>Country: {country}</li>
-          </ul>
-        </Card.Text>
+        Profile:
+        <ul>
+          <li>
+            Email: <a href={`mailto:${email}`}>{email}</a>
+          </li>
+          <li>Work experience: {experience} years</li>
+          <li>Country: {country}</li>
+        </ul>
       </Card.Body>
     </Card>
   );

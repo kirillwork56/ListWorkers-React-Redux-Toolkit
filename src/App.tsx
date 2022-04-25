@@ -9,8 +9,10 @@ const App: FC<Props> = () => {
   return (
     <Container>
       <Row>
-        <Col>Hello world</Col>
-        <Cards />
+        <Col>
+          <h1>List workers</h1>
+          <Cards />
+        </Col>
       </Row>
     </Container>
   );
