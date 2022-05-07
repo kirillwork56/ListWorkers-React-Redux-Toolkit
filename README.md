@@ -6,7 +6,9 @@ The application displays a list of employees, with the ability to sort
 
 **Client:** React, Redux Toolkit
 
-<!-- ## Demo -->
+## Demo
+
+https://list-workers-react-redux-toolkit.vercel.app/
 
 ## Environment Variables
 
