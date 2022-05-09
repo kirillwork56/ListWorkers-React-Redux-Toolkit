@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { PersonI } from "types/PersonI";
 
 const MyCard: FC<PersonI> = ({
@@ -8,6 +9,7 @@ const MyCard: FC<PersonI> = ({
   experience,
   jobTitle,
   name,
+  id,
 }) => {
   return (
     <Card>
@@ -22,6 +24,7 @@ const MyCard: FC<PersonI> = ({
           <li>Work experience: {experience} years</li>
           <li>Country: {country}</li>
         </ul>
+        <Link to={`/profile/${id}`}>All information</Link>
       </Card.Body>
     </Card>
   );

@@ -8,4 +8,11 @@ export const WorkersAPI = {
     const workersArr = await data.json();
     return workersArr;
   },
+
+  getOneWorker: async (id: number) => {
+    const URL = `${API_URL}${WORKER_TYPE}/${id}`;
+    const data = await fetch(URL);
+    const worker = await data.json();
+    return worker;
+  },
 };
