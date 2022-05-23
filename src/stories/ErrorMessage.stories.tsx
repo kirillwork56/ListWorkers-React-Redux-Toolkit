@@ -15,11 +15,13 @@ const Template: ComponentStory<typeof ErrorMessage> = (args) => (
 export const exampleDanger = Template.bind({});
 exampleDanger.args = {
   type: "danger",
-  text: "error danger",
+  status: 404,
+  dataError: "not found",
 };
 
 export const exampleInfo = Template.bind({});
 exampleInfo.args = {
   type: "info",
-  text: "info danger",
+  status: 400,
+  dataError: "Bad Request",
 };

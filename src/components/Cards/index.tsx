@@ -1,32 +1,14 @@
-import ErrorMessage from "components/ErrorMessage";
 import MyCard from "components/MyCard";
-import MyDropdown from "components/MyDropdown";
-import { useAppDispatch, useAppSelector } from "hooks/hooks";
-import { FC, useEffect } from "react";
-import { fetchWorkersAT } from "redux/reducers/appReducer";
+import { FC } from "react";
+import { PersonI } from "types/PersonI";
 
-interface Props {}
+interface Props {
+  personArr: PersonI[];
+}
 
-const Cards: FC<Props> = () => {
-  const dispatch = useAppDispatch();
-  const personArr = useAppSelector((state) => state.app.personArr);
-  const isLoading = useAppSelector((state) => state.app.isLoading);
-
-  useEffect(() => {
-    dispatch(fetchWorkersAT());
-  }, [dispatch]);
-
-  if (!personArr && !isLoading)
-    return <ErrorMessage text={"No data"} type={"info"} />;
-
+const Cards: FC<Props> = ({ personArr }) => {
   return (
     <>
-      {!isLoading && (
-        <div className="mb-3">
-          <MyDropdown />
-        </div>
-      )}
-
       {personArr?.map((person) => (
         <div className="mb-3" key={person.id}>
           <MyCard {...person} />

@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_URL || "empty";
+const API_URL = process.env.REACT_APP_API_URL || "";
 const WORKER_TYPE = "/workers";
 
 export const WorkersAPI = {

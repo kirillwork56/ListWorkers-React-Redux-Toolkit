@@ -3,16 +3,17 @@ import { Alert } from "react-bootstrap";
 
 interface Props {
   type: "danger" | "info";
-  text: string;
+  status: string | number;
+  dataError: string;
 }
 
-const ErrorMessage: FC<Props> = ({ type, text }) => {
+const ErrorMessage: FC<Props> = ({ type, status, dataError }) => {
   return (
     <Alert variant={type}>
       <Alert.Heading>
         Something went wrong, please try again later
       </Alert.Heading>
-      {text}
+      Status: {status} {dataError}
     </Alert>
   );
 };

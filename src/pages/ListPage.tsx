@@ -2,24 +2,36 @@ import Cards from "components/Cards";
 import ErrorMessage from "components/ErrorMessage";
 import Layout from "components/Layout";
 import Loader from "components/Loader";
-import { useAppSelector } from "hooks/hooks";
+import MyDropdown from "components/MyDropdown";
 import { FC } from "react";
+import { useGetWorkersQuery } from "redux/workersApi";
 
 interface Props {}
 
 const ListPage: FC<Props> = () => {
-  const isLoading = useAppSelector((state) => state.app.isLoading);
-  const errorStr = useAppSelector((state) => state.app.error);
+  const { data, error, isError, isLoading } = useGetWorkersQuery(10);
 
   return (
     <Layout>
       <h1>List workers</h1>
 
-      {errorStr !== null && <ErrorMessage text={errorStr} type={"danger"} />}
+      {isError && (
+        <ErrorMessage
+          status={"status" in error! ? error.status : ""}
+          dataError={"data" in error! ? JSON.stringify(error.data) : ""}
+          type={"danger"}
+        />
+      )}
 
       {isLoading && <Loader />}
 
-      <Cards />
+      {!isLoading && !isError && (
+        <div className="mb-3">
+          <MyDropdown />
+        </div>
+      )}
+
+      <Cards personArr={data!} />
     </Layout>
   );
 };

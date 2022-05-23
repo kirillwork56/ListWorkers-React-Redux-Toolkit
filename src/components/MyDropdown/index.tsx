@@ -1,7 +1,7 @@
 import { useAppDispatch } from "hooks/hooks";
 import { FC } from "react";
 import { Dropdown } from "react-bootstrap";
-import { sortPersonArr } from "redux/reducers/appReducer";
+// import { sortPersonArr } from "redux/reducers/appReducer";
 
 interface Props {}
 
@@ -9,7 +9,7 @@ const MyDropdown: FC<Props> = () => {
   const dispatch = useAppDispatch();
 
   const sortByExp = () => {
-    dispatch(sortPersonArr("exp"));
+    // dispatch(sortPersonArr("exp"));
   };
 
   return (
