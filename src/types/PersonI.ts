@@ -7,3 +7,8 @@ export interface PersonI {
   jobTitle: string;
   id: string;
 }
+
+export interface PersonListI {
+  items: PersonI;
+  count: number;
+}

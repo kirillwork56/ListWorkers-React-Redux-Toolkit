@@ -9,10 +9,11 @@ export const workersApi = createApi({
 
   endpoints: (builder) => ({
     getWorkers: builder.query<PersonI[], number>({
-      query: (limit: number = 10) => ({
+      query: (limit: number) => ({
         url: `workers`,
         params: {
-          _limit: limit,
+          page: 1,
+          limit: limit,
         },
       }),
     }),
