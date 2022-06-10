@@ -2,7 +2,6 @@ import Cards from "components/Cards";
 import ErrorMessage from "components/ErrorMessage";
 import Layout from "components/Layout";
 import Loader from "components/Loader";
-import MyDropdown from "components/MyDropdown";
 import { FC, useState } from "react";
 import { Button, Dropdown } from "react-bootstrap";
 import { useGetWorkersQuery } from "redux/workersApi";
@@ -69,7 +68,7 @@ const ListPage: FC<Props> = () => {
         </div>
       )}
 
-      <Cards personArr={data!} />
+      {data?.items && <Cards personArr={data.items} />}
     </Layout>
   );
 };

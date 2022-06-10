@@ -9,6 +9,6 @@ export interface PersonI {
 }
 
 export interface PersonListI {
-  items: PersonI;
+  items: PersonI[];
   count: number;
 }
